@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人記帳軟體 (Legacy Demo)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>我的記帳本</h1>
+        
+        <div class="card warning-card">
+            <h3>💳 本月預算狀態</h3>
+            <p>設定總預算：<span id="budget-limit">20,000</span> 元</p>
+            <p>目前已花費：<strong id="current-total" class="total-amount">0</strong> 元</p>
+            <div id="alert-box" class="alert hidden">⚠️ 警告：您已超出本月預算！</div>
+        </div>
+
+        <div class="card">
+            <h3>📝 新增一筆支出</h3>
+            <form id="expense-form">
+                <div class="form-group">
+                    <label for="item-name">項目名稱：</label>
+                    <input type="text" id="item-name" required placeholder="例如：買菜、生活用品">
+                </div>
+                <div class="form-group">
+                    <label for="item-amount">金額：</label>
+                    <input type="number" id="item-amount" required min="1">
+                </div>
+                <div class="form-group">
+                    <label for="item-date">消費日期：</label>
+                    <input type="date" id="item-date" required>
+                </div>
+                <button type="submit" class="primary-btn">新增紀錄</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h3>📊 歷史消費清單</h3>
+            <ul id="expense-list" class="expense-list">
+                <!-- 列表由 JS 動態生成 -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- The Legacy Script -->
+    <script src="expense_manager.js"></script>
+</body>
+</html>
